@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_26_215229) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_27_152631) do
   create_table "breeds", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "dogs", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.integer "breed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["breed_id"], name: "index_dogs_on_breed_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ownerships", force: :cascade do |t|
+    t.integer "dog_id", null: false
+    t.integer "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_ownerships_on_dog_id"
+    t.index ["owner_id"], name: "index_ownerships_on_owner_id"
+  end
+
+  add_foreign_key "dogs", "breeds"
+  add_foreign_key "ownerships", "dogs"
+  add_foreign_key "ownerships", "owners"
 end

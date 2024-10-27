@@ -6,16 +6,18 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+    <th>ID</th>  
+    <th>Name</th>
+      
     </tr>
   </thead>
   <tbody>
     <% @breeds.each do |breed| %>
       <tr>
-      
-        <td><%= breed.name %></td>
         <td><%= breed.id %></td>
-        </tr>
+        <td><%= breed.name %></td>
+        
+      </tr>
     <% end %>
   </tbody>
 </table>
