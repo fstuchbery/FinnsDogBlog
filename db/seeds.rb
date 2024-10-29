@@ -52,6 +52,6 @@ end
 5.times do
   owner = Owner.create(name: Faker::Name.name, age: rand(20..70))
   # Randomly assign some dogs to this owner by grabbign 1 or 2 dogs 
-  dogs_to_assign = Dog.order('RANDOM()').limit(rand(0..2)) # Select 1 to 3 random dogs through some random sql query stuff
+  dogs_to_assign = Dog.order('RANDOM()').limit(rand(1..3)) # Select 1 to 3 random dogs through some random sql query stuff
   owner.dogs << dogs_to_assign
 end
