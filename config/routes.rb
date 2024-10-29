@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/articles", to: "articles#index"
   get 'about', to: 'articles#about'
   get '/breeds', to: 'breeds#index', as: 'breeds'
+  get '/owners/:id', to: 'owners#show', as: 'owner'
+  get '/dogs/:id', to: 'dogs#show', as: 'dog'
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -4,3 +4,11 @@
 <%= link_to "Dog Breeds", breeds_path %>
 <p> </p>
 <p>tim is trying to say <%= @first_message %> </p>
+<h2>Owners List:</h2>
+<ul>
+  <% Owner.all.each do |owner| %>
+    <li>
+      <%= link_to owner.name, owner_path(owner) %>
+    </li>
+  <% end %>
+</ul>
