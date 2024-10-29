@@ -33,7 +33,7 @@ puts "#{breeds.count} breeds added to the database."
 
 
 if Breed.any?
-  10.times do
+  100.times do
     breed_id = Breed.pluck(:id).sample
     dog = Dog.create(
       name: Faker::Creature::Dog.name,
@@ -49,4 +49,9 @@ else
   puts "No breeds available to assign to dogs."
 end
 
-
+5.times do
+  owner = Owner.create(name: Faker::Name.name, age: rand(20..70))
+  # Randomly assign some dogs to this owner by grabbign 1 or 2 dogs 
+  dogs_to_assign = Dog.order('RANDOM()').limit(rand(0..2)) # Select 1 to 3 random dogs through some random sql query stuff
+  owner.dogs << dogs_to_assign
+end
