@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root "articles#index"
-  get "/articles", to: "articles#index"
-  get 'about', to: 'articles#about'
+  root "homes#index"
+  get "/homes", to: "homes#index"
+  get 'about', to: 'homes#about'
   get '/breeds', to: 'breeds#index', as: 'breeds'
   get '/owners/:id', to: 'owners#show', as: 'owner'
   get '/dogs/:id', to: 'dogs#show', as: 'dog'
