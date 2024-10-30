@@ -4,13 +4,13 @@
 <%= link_to "About", about_path %>
 <%= link_to "Dog Breeds", breeds_path %>
 
-
+<div id = 'formDiv'>
 <%= form_with(url: search_breeds_path, method: :get, local: true) do %>
   <%= label_tag :query, "Search Breeds:" %>
   <%= text_field_tag :query, params[:query] %>
   <%= submit_tag "Search" %>
 <% end %>
-
+</div>
 <h2><%= @results.present? ? "Search Results:" : "All Breeds:" %></h2>
 <ul>
   <% if @results.present? %>
