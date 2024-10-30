@@ -15,4 +15,9 @@
  */
 #aboutParagraph {
     width: 30%;
+    margin-top: 2px;
+}
+
+#erd {
+    border: 1px solid #000;
 }
