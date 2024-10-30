@@ -23,6 +23,10 @@
 
 }
 
-.links {
+.links, .homelinks {
     list-style: none;
+}
+
+.homelinks {
+    margin: 0px 6px;
 }

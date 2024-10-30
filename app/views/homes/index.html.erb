@@ -6,7 +6,7 @@
 <h2>Owners:</h2>
 <ul>
   <% Owner.all.each do |owner| %>
-    <li>
+    <li class = "homelinks">
       <%= link_to owner.name, owner_path(owner) %>
     </li>
   <% end %>
