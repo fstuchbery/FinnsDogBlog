@@ -14,11 +14,11 @@
 <ul>
   <% if @results.present? %>
     <% @results.each do |breed| %>
-      <li><%= breed.name %>,  Breed ID: <%= breed.id %> </li>
+      <li class = "links"><%= breed.name %>,  Breed ID: <%= breed.id %> </li>
     <% end %>
   <% else %>
     <% @breeds.each do |breed| %>
-      <li><%= breed.name %></li>
+      <li class = "links"><%= breed.name %></li>
     <% end %>
   <% end %>
 </ul>
