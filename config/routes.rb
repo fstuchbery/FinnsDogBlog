@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/breeds', to: 'breeds#index', as: 'breeds'
   get '/owners/:id', to: 'owners#show', as: 'owner'
   get '/dogs/:id', to: 'dogs#show', as: 'dog'
+  get 'breeds/search', to: 'breeds#search', as: 'search_breeds'
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
